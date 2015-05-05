@@ -1,0 +1,10 @@
+.DS_Store
+xcuserdata
+*.pyc
+*.xccheckout
+*.orig
+project.xcworkspace
+*.BACKUP.*
+*.REMOTE.*
+*.LOCAL.*
+Pods/*

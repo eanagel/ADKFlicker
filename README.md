@@ -1,7 +1,7 @@
 # ADKFlicker #
 
 
-A sample application that reproduces some weird flickering in AsyncDisplayKit's `ASTableView` cells. You can see an example of the problem in this [video](ADKFlicker-demo.mp4).
+A sample application that reproduces some weird flickering in AsyncDisplayKit's `ASTableView` cells. You can see an example of the problem in this [video](ADKFlicker-demo.mp4?raw=true).
 
 Requires a special version of AsyncDisplayKit (located [here](https://github.com/eanagel/AsyncDisplayKit/tree/ADKFlicker)) that is the [current master](https://github.com/facebook/AsyncDisplayKit/tree/f248dbddd1eb3de559b2ec3b9397d2f218ffe6af) with the following pull requests merged in:
 

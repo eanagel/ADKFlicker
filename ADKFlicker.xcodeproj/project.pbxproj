@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		190E54990FA55732A3264220 /* libPods-ADKFlicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51DA4E91E121ECFDCCA39829 /* libPods-ADKFlicker.a */; };
+		F0401CDE1AFAA23E00E5CB21 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0401CDC1AFAA23E00E5CB21 /* TableViewCell.m */; };
+		F0401CDF1AFAA23E00E5CB21 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0401CDD1AFAA23E00E5CB21 /* TableViewCell.xib */; };
 		F0709FA61AF9004F00D28C85 /* ViewController+TestData.m in Sources */ = {isa = PBXBuildFile; fileRef = F0709FA51AF9004F00D28C85 /* ViewController+TestData.m */; };
 		F0709FA81AF92FA800D28C85 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F0709FA71AF92FA800D28C85 /* .gitignore */; };
 		F0709FAA1AF930A300D28C85 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = F0709FA91AF930A300D28C85 /* README.md */; };
@@ -34,6 +36,9 @@
 		006531F2A3812E3AABD64864 /* Pods-ADKFlicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADKFlicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ADKFlicker/Pods-ADKFlicker.debug.xcconfig"; sourceTree = "<group>"; };
 		51DA4E91E121ECFDCCA39829 /* libPods-ADKFlicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ADKFlicker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA688B16F8FEEB817A6B6DF /* Pods-ADKFlicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADKFlicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-ADKFlicker/Pods-ADKFlicker.release.xcconfig"; sourceTree = "<group>"; };
+		F0401CDB1AFAA23E00E5CB21 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		F0401CDC1AFAA23E00E5CB21 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		F0401CDD1AFAA23E00E5CB21 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		F0709FA41AF9004F00D28C85 /* ViewController+TestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+TestData.h"; sourceTree = "<group>"; };
 		F0709FA51AF9004F00D28C85 /* ViewController+TestData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+TestData.m"; sourceTree = "<group>"; };
 		F0709FA71AF92FA800D28C85 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -124,6 +129,9 @@
 				F08E06F21AF7C3A3004C6D66 /* Images.xcassets */,
 				F08E06F41AF7C3A3004C6D66 /* LaunchScreen.xib */,
 				F08E06E51AF7C3A3004C6D66 /* Supporting Files */,
+				F0401CDB1AFAA23E00E5CB21 /* TableViewCell.h */,
+				F0401CDC1AFAA23E00E5CB21 /* TableViewCell.m */,
+				F0401CDD1AFAA23E00E5CB21 /* TableViewCell.xib */,
 			);
 			path = ADKFlicker;
 			sourceTree = "<group>";
@@ -237,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0709FA81AF92FA800D28C85 /* .gitignore in Resources */,
+				F0401CDF1AFAA23E00E5CB21 /* TableViewCell.xib in Resources */,
 				F08E06F61AF7C3A3004C6D66 /* LaunchScreen.xib in Resources */,
 				F08E070C1AF7C4D1004C6D66 /* ViewController.xib in Resources */,
 				F08E06F31AF7C3A3004C6D66 /* Images.xcassets in Resources */,
@@ -291,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0709FA61AF9004F00D28C85 /* ViewController+TestData.m in Sources */,
+				F0401CDE1AFAA23E00E5CB21 /* TableViewCell.m in Sources */,
 				F08E06EE1AF7C3A3004C6D66 /* ViewController.m in Sources */,
 				F0709FAA1AF930A300D28C85 /* README.md in Sources */,
 				F08E06EB1AF7C3A3004C6D66 /* AppDelegate.m in Sources */,

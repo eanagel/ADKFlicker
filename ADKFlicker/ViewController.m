@@ -6,18 +6,20 @@
 //  Copyright (c) 2015 Ethan Nagel. All rights reserved.
 //
 
-#import <AsyncDisplayKit.h>
+//#import <AsyncDisplayKit.h>
 
 #import "ViewController.h"
 
 #import "ViewController+TestData.h"
 
+#import "TableViewCell.h"
+
 static void *KVO_contentSize = &KVO_contentSize;
 
 
-@interface ViewController () <ASTableViewDataSource, ASTableViewDelegate, UITextFieldDelegate>
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet ASTableView *tableView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (nonatomic) NSMutableArray *messages;
 
@@ -39,8 +41,12 @@ static void *KVO_contentSize = &KVO_contentSize;
   self.messages = [[self testData] mutableCopy];
 
   self.textField.delegate = self;
-  self.tableView.asyncDelegate = self;
-  self.tableView.asyncDataSource = self;
+
+  [self.tableView registerNib:[TableViewCell nib] forCellReuseIdentifier:[TableViewCell reuseIdentifier]];
+  self.tableView.rowHeight = UITableViewAutomaticDimension;
+  self.tableView.estimatedRowHeight = 44;
+  self.tableView.delegate = self;
+  self.tableView.dataSource = self;
 
   [self.tableView addObserver:self
                    forKeyPath:NSStringFromSelector(@selector(contentSize))
@@ -126,18 +132,21 @@ static void *KVO_contentSize = &KVO_contentSize;
   }
 }
 
-#pragma mark - ASTableViewDataSource/Delegate
+#pragma mark - UITableViewDataSource/Delegate
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   return self.messages.count;
 }
 
--(ASCellNode *)tableView:(ASTableView *)tableView nodeForRowAtIndexPath:(NSIndexPath *)indexPath {
-  ASTextCellNode *node = [[ASTextCellNode alloc] init];
-  node.text = self.messages[indexPath.row];
-  node.backgroundColor = (indexPath.row%2) ? [[UIColor redColor] colorWithAlphaComponent:0.25] : [[UIColor greenColor] colorWithAlphaComponent:0.25];
 
-  return node;
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    TableViewCell *cell = (TableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:[TableViewCell reuseIdentifier] forIndexPath:indexPath];
+
+    [cell configureWithMessage:self.messages[indexPath.row]];
+
+    cell.contentView.backgroundColor = (indexPath.row%2) ? [[UIColor redColor] colorWithAlphaComponent:0.25] : [[UIColor greenColor] colorWithAlphaComponent:0.25];
+    
+    return cell;
 }
 
 #pragma mark - UITextFieldDelegate

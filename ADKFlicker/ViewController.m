@@ -22,11 +22,13 @@ static void *KVO_contentSize = &KVO_contentSize;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (nonatomic) NSMutableArray *messages;
+@property (nonatomic,readonly) TableViewCell *sizingCell;
 
 @end
 
 @implementation ViewController {
   BOOL _scrolling;
+  TableViewCell *_sizingCell;
 }
 
 #pragma mark - UIViewController overrides
@@ -43,8 +45,6 @@ static void *KVO_contentSize = &KVO_contentSize;
   self.textField.delegate = self;
 
   [self.tableView registerNib:[TableViewCell nib] forCellReuseIdentifier:[TableViewCell reuseIdentifier]];
-  self.tableView.rowHeight = UITableViewAutomaticDimension;
-  self.tableView.estimatedRowHeight = 44;
   self.tableView.delegate = self;
   self.tableView.dataSource = self;
 
@@ -134,10 +134,36 @@ static void *KVO_contentSize = &KVO_contentSize;
 
 #pragma mark - UITableViewDataSource/Delegate
 
+
+-(TableViewCell *)sizingCell {
+  if (!_sizingCell) {
+    _sizingCell = [TableViewCell tableViewCell];
+  }
+
+  return _sizingCell;
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   return self.messages.count;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  TableViewCell *sizingCell = self.sizingCell;
+
+  sizingCell.bounds = CGRectMake(0, 0, CGRectGetWidth(tableView.bounds), CGRectGetHeight(sizingCell.bounds));
+
+  [sizingCell configureWithMessage:self.messages[indexPath.row]];
+
+  [sizingCell setNeedsUpdateConstraints];
+  [sizingCell updateConstraintsIfNeeded];
+
+  [sizingCell setNeedsLayout];
+  [sizingCell layoutIfNeeded];
+
+  CGFloat height = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+
+  return height + 1;
+}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TableViewCell *cell = (TableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:[TableViewCell reuseIdentifier] forIndexPath:indexPath];

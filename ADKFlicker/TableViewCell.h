@@ -10,8 +10,9 @@
 
 @interface TableViewCell : UITableViewCell
 
-+(UINib *)nib;
-+(NSString *)reuseIdentifier;
++ (UINib *)nib;
++ (NSString *)reuseIdentifier;
++ (instancetype)tableViewCell;
 
 - (void)configureWithMessage:(NSString *)message;
 

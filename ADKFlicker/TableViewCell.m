@@ -17,31 +17,34 @@
 @implementation TableViewCell
 
 + (UINib *)nib {
-    return [UINib nibWithNibName:@"TableViewCell" bundle:nil];
+  return [UINib nibWithNibName:@"TableViewCell" bundle:nil];
 }
-
 
 + (NSString *)reuseIdentifier {
-    return NSStringFromClass(self);
+  return NSStringFromClass(self);
 }
 
++(instancetype)tableViewCell {
+  return [[[self nib] instantiateWithOwner:[[NSObject alloc] init] options:nil] firstObject];
+}
 
 - (NSString *)reuseIdentifier {
-    return [self.class reuseIdentifier];
+  return [self.class reuseIdentifier];
 }
 
 - (void)awakeFromNib {
-    // Initialization code
+  // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+  [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+  // Configure the view for the selected state
 }
 
 - (void)configureWithMessage:(NSString *)message {
-    self.myLabel.text = message;
+  self.myLabel.text = message;
+  self.myLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.myLabel.bounds);
 }
 
 

@@ -17,12 +17,11 @@ Pull the repo and run `pod update`
 
 ## Steps to Reproduce ##
 
-Ok, once you reproduce you'll know it, because things start acting real weird!
 
-1. Run the app in the simulator and enable slow animations. Make sure the keyboard is hidden so you can type while seeing the whole screen. (You'll be entering text and I don't resize the screen for the keyboard.)
-2. Select the "type something!" text box and enter a few messages in rapid succession.
-3. Do this a couple times and you will notice the red and green cells will begin overlapping each other while animations are active.
-4. If can manage to grab the View Heirarchy while the animations are happening you see some weird stuff, including a `UIView` at the same level as the `UITableViewCellContentView`. I assume this is a normal part of the cell's animation lifecycle (you don't see them when animations aren't in flight.) At times the frames of the cells seem to be just wrong DURING the animation, but they are correct after the animation completes.
+1. Run the app in the simulator. No need for slow animations or anything.
+
+2. Hit the "Start Test" button and wait for a bit. You'll see cell contents getting truncated and overlapping while the scroll animation is in effect. So weird!
+3. If can manage to grab the View Heirarchy while the animations are happening you see some weird stuff, including a `UIView` at the same level as the `UITableViewCellContentView`. I assume this is a normal part of the cell's animation lifecycle (you don't see them when animations aren't in flight.) At times the frames of the cells seem to be just wrong DURING the animation, but they are correct after the animation completes.
 
 ## Thoughts ##
 

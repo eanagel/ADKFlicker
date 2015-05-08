@@ -1,5 +1,6 @@
 # ADKFlicker #
 
+*Update 5/8:* New version included here is much simpler to reproduce the problem with, see Steps to Reproduce. Additionally, the video has been updated to show the effect with this version.
 
 A sample application that reproduces some weird flickering in AsyncDisplayKit's `ASTableView` cells. You can see an example of the problem in this [video](ADKFlicker-demo.mp4?raw=true).
 

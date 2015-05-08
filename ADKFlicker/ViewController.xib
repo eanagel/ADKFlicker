@@ -7,7 +7,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
             <connections>
                 <outlet property="tableView" destination="GFE-DU-S8z" id="0j7-xl-CfP"/>
-                <outlet property="textField" destination="MOg-An-PeV" id="8Rl-Yp-1Os"/>
                 <outlet property="view" destination="iN0-l3-epB" id="c5N-gc-doW"/>
             </connections>
         </placeholder>
@@ -15,29 +14,18 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <userGuides>
-                <userLayoutGuide affinity="minY"/>
-            </userGuides>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GFE-DU-S8z" userLabel="tableView" customClass="ASTableView">
-                    <rect key="frame" x="0.0" y="30" width="600" height="506"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type something!" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MOg-An-PeV" userLabel="textField">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="GFE-DU-S8z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6O3-NB-Bnd"/>
-                <constraint firstItem="GFE-DU-S8z" firstAttribute="top" secondItem="MOg-An-PeV" secondAttribute="bottom" id="Hkp-Ga-ywG"/>
-                <constraint firstAttribute="bottom" secondItem="GFE-DU-S8z" secondAttribute="bottom" id="KFw-Df-U69"/>
-                <constraint firstItem="MOg-An-PeV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UfD-lk-3wO"/>
-                <constraint firstItem="MOg-An-PeV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="X7R-at-kmy"/>
-                <constraint firstAttribute="trailing" secondItem="MOg-An-PeV" secondAttribute="trailing" id="Ylr-Kc-LrH"/>
-                <constraint firstAttribute="trailing" secondItem="GFE-DU-S8z" secondAttribute="trailing" id="geE-tD-4kh"/>
+                <constraint firstItem="GFE-DU-S8z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9qO-XD-HMd"/>
+                <constraint firstAttribute="bottom" secondItem="GFE-DU-S8z" secondAttribute="bottom" id="U4b-Hz-LgN"/>
+                <constraint firstItem="GFE-DU-S8z" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dri-yr-aPP"/>
+                <constraint firstAttribute="trailing" secondItem="GFE-DU-S8z" secondAttribute="trailing" id="kL5-iP-rdR"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
         </view>

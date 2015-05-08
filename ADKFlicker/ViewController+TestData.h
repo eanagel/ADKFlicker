@@ -10,6 +10,6 @@
 
 @interface ViewController (TestData)
 
-@property(nonatomic,readonly) NSArray *testData;
+- (NSArray *)loadTestData;
 
 @end

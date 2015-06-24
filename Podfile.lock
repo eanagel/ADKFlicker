@@ -1,23 +1,21 @@
 PODS:
-  - AsyncDisplayKit (1.1.1):
-    - AsyncDisplayKit/ASDealloc2MainObject (= 1.1.1)
-  - AsyncDisplayKit/ASDealloc2MainObject (1.1.1)
+  - AsyncDisplayKit (1.2.1):
+    - AsyncDisplayKit/ASDealloc2MainObject (= 1.2.1)
+  - AsyncDisplayKit/ASDealloc2MainObject (1.2.1)
 
 DEPENDENCIES:
-  - AsyncDisplayKit (from `https://github.com/eanagel/AsyncDisplayKit.git`, branch
-    `ADKFlicker`)
+  - AsyncDisplayKit (from `https://github.com/Facebook/AsyncDisplayKit.git`)
 
 EXTERNAL SOURCES:
   AsyncDisplayKit:
-    :branch: ADKFlicker
-    :git: https://github.com/eanagel/AsyncDisplayKit.git
+    :git: https://github.com/Facebook/AsyncDisplayKit.git
 
 CHECKOUT OPTIONS:
   AsyncDisplayKit:
-    :commit: b309ab1cc302d0933b7962d20ed96f2e0d1481f3
-    :git: https://github.com/eanagel/AsyncDisplayKit.git
+    :commit: 66e241162f0a7c2e20d9e62ed7a9ec568a9fc6a0
+    :git: https://github.com/Facebook/AsyncDisplayKit.git
 
 SPEC CHECKSUMS:
-  AsyncDisplayKit: de270404aae9f070e1450e38840003691f9b5259
+  AsyncDisplayKit: b2f777da3a246b4aad660b2a55d60bb4328049b9
 
-COCOAPODS: 0.36.4
+COCOAPODS: 0.37.2
